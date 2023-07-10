@@ -279,7 +279,7 @@ export default {
 
 .box {
   width: 500px;
-  height: 300px;
+  height: 350px;
   margin: 0 auto;
   outline: 3px solid rgb(203, 203, 203);
 
