@@ -11,7 +11,7 @@ exports.Height = core_1.Mark.create({
     addOptions: function () {
         return {
             HTMLAttributes: {
-                style: 'line-height: 2.5',
+                style: 'line-height: 2.5; color: red;', // 定义属性，会在下面的渲染规则将改样式加进去，进行标记
             },
         };
     },
@@ -43,7 +43,9 @@ exports.Height = core_1.Mark.create({
             }; },
             toggleHeight: function () { return function (_a) {
                 var commands = _a.commands;
-                return commands.toggleMark(_this.name);
+                var a = commands.toggleMark(_this.name);
+                console.log(a);
+                return a;
             }; },
             unsetHeight: function () { return function (_a) {
                 var commands = _a.commands;

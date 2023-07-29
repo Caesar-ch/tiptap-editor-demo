@@ -38,8 +38,8 @@ export const Height = Mark.create<BoldOptions>({
 
   addOptions() {
     return {
-      HTMLAttributes: {
-        style: 'line-height: 2.5',
+      HTMLAttributes: { // 定义html属性
+        style: 'line-height: 2.5; color: red;', // 定义属性，会在下面的渲染规则将改样式加进去，进行标记
       },
     }
   },
@@ -64,13 +64,15 @@ export const Height = Mark.create<BoldOptions>({
     return ['p', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0]
   },
 
-  addCommands() {
-    return {
+  addCommands() { // 设置命令，在执行明亮时就会执行mark标记，标记就会触发对应的标记的渲染函数和解析函数
+    return { // 设置命令在其他文件导入就可以进行执行命令，就会对文本进行操作，进行操作就会触发渲染规则函数，和解析规则函数
       setHeight: () => ({ commands }) => {
         return commands.setMark(this.name)
       },
       toggleHeight: () => ({ commands }) => {
-        return commands.toggleMark(this.name)
+        let a = commands.toggleMark(this.name)
+        console.log(a);
+        return a
       },
       unsetHeight: () => ({ commands }) => {
         return commands.unsetMark(this.name)
@@ -78,14 +80,14 @@ export const Height = Mark.create<BoldOptions>({
     }
   },
 
-  addKeyboardShortcuts() {
+  addKeyboardShortcuts() { //
     return {
-      'Mod-b': () => this.editor.commands.toggleBold(),
+      'Mod-b': () => this.editor.commands.toggleBold(), 
       'Mod-B': () => this.editor.commands.toggleBold(),
     }
   },
 
-  addInputRules() {
+  addInputRules() { // 在此标记的文本内进行输入的 规则，会延续此 规则
     return [
       markInputRule({
         find: starInputRegex,
