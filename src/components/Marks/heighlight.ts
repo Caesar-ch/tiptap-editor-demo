@@ -47,15 +47,7 @@ export const Height = Mark.create<BoldOptions>({
   parseHTML() {
     return [
       {
-        tag: 'strong',
-      },
-      {
-        tag: 'b',
-        getAttrs: node => (node as HTMLElement).style.fontWeight !== 'normal' && null,
-      },
-      {
-        style: 'font-weight',
-        getAttrs: value => /^(bold(er)?|[5-9]\d{2,})$/.test(value as string) && null,
+        tag: 'p',
       },
     ]
   },
