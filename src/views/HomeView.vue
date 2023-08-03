@@ -2,15 +2,15 @@
   <div class="home">
     <div ref="bigbox" @mouseover="handleHover" class="table-select-param">
       <div class="musk" ref="musk"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
+      <div class="item" :class="{is-active: }"></div>
+      <div class="item" :class="{is-active: }"></div>
+      <div class="item" :class="{is-active: }"></div>
+      <div class="item" :class="{is-active: }"></div>
+      <div class="item" :class="{is-active: }"></div>
+      <div class="item" :class="{is-active: }"></div>
+      <div class="item" :class="{is-active: }"></div>
+      <div class="item" :class="{is-active: }"></div>
+      <div class="item" :class="{is-active: }"></div>
     </div>
     <img alt="Vue logo" src="../assets/logo.png">
     <!-- <Taptip></Taptip> -->
@@ -37,8 +37,8 @@ export default {
       // this.$refs.bigbox
       let {x, y} = this.$refs.bigbox.getBoundingClientRect()
       console.log(this.$refs.bigbox, e.x, e.y);
-      this.$refs.musk.style.width = `${e.x - x}px`
-      this.$refs.musk.style.height = `${e.y - y}px`
+      // this.$refs.musk.style.width = `${e.x - x}px`
+      // this.$refs.musk.style.height = `${e.y - y}px`
     }
   },
   mounted() {
