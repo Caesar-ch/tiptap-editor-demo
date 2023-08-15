@@ -1,19 +1,18 @@
 <template>
   <div class="home">
-    <div ref="bigbox" @mouseover="handleHover" class="table-select-param">
+    <div ref="bigbox" @mousemove="handleMove" class="table-select-param">
       <div class="musk" ref="musk"></div>
-      <div class="item" :class="{is-active: }"></div>
-      <div class="item" :class="{is-active: }"></div>
-      <div class="item" :class="{is-active: }"></div>
-      <div class="item" :class="{is-active: }"></div>
-      <div class="item" :class="{is-active: }"></div>
-      <div class="item" :class="{is-active: }"></div>
-      <div class="item" :class="{is-active: }"></div>
-      <div class="item" :class="{is-active: }"></div>
-      <div class="item" :class="{is-active: }"></div>
+      <div class="item" :class="{isActive: (1 <= flagX && 1 <= flagY) }"></div>
+      <div class="item" :class="{isActive: (2 <= flagX && 1 <= flagY)}"></div>
+      <div class="item" :class="{isActive: (3 <= flagX && 1 <= flagY)}"></div>
+      <div class="item" :class="{isActive: (1 <= flagX && 2 <= flagY)}"></div>
+      <div class="item" :class="{isActive: (2 <= flagX && 2 <= flagY)}"></div>
+      <div class="item" :class="{isActive: (3 <= flagX && 2 <= flagY)}"></div>
+      <div class="item" :class="{isActive: (1 <= flagX && 3 <= flagY)}"></div>
+      <div class="item" :class="{isActive: (2 <= flagX && 3 <= flagY)}"></div>
+      <div class="item" :class="{isActive: (3 <= flagX && 3 <= flagY)}"></div>
     </div>
-    <img alt="Vue logo" src="../assets/logo.png">
-    <!-- <Taptip></Taptip> -->
+    <Taptip></Taptip>
   </div>
 </template>
 
@@ -30,15 +29,16 @@ export default {
     return {
       bigbox: null,
       musk: null,
+      flagX: 0,
+      flagY: 0,
     }
   },
   methods: {
-    handleHover(e) {
-      // this.$refs.bigbox
+    handleMove(e) {
       let {x, y} = this.$refs.bigbox.getBoundingClientRect()
-      console.log(this.$refs.bigbox, e.x, e.y);
-      // this.$refs.musk.style.width = `${e.x - x}px`
-      // this.$refs.musk.style.height = `${e.y - y}px`
+      this.flagX = Math.ceil( (e.x - x) / 30)
+      this.flagY = Math.ceil((e.y - y) / 30)
+      console.log(e.x, e.y, x, y , e.x- x, e.y -y,this.flagX, this.flagY);
     }
   },
   mounted() {
@@ -65,6 +65,9 @@ export default {
     height: 30px;
     border: 1px solid blue;
     box-sizing: border-box;
+  }
+  .isActive {
+    background-color: red;
   }
 }
 </style>
