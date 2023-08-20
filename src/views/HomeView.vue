@@ -38,7 +38,7 @@ export default {
       let {x, y} = this.$refs.bigbox.getBoundingClientRect()
       this.flagX = Math.ceil( (e.x - x) / 30)
       this.flagY = Math.ceil((e.y - y) / 30)
-      console.log(e.x, e.y, x, y , e.x- x, e.y -y,this.flagX, this.flagY);
+      // console.log(e.x, e.y, x, y , e.x- x, e.y -y,this.flagX, this.flagY);
     }
   },
   mounted() {
