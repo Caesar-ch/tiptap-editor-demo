@@ -2,42 +2,24 @@
   <div class="box tiny-rich-text-editor" resize="both" v-if="editor">
     <Bubble-Menu :editor="editor"></Bubble-Menu>
     <Img :editor="editor"></Img>
-    <button
-      @click="editor.chain().focus().toggleBold().run()"
-      :class="{ 'is-active': editor.isActive('bold') }"
-    >
+    <button @click="editor.chain().focus().toggleBold().run()" :class="{ 'is-active': editor.isActive('bold') }">
       <img src="@/assetslc2/bold.svg" alt="" srcset="" />
     </button>
-    <button
-      class="line-height-button"
-      @click="editor.chain().focus().toggleHeight().run()"
-    >
+    <button class="line-height-button" @click="editor.chain().focus().toggleHeight().run()">
       <div class="line-height-icon">
         <img src="@/assetslc2/line-height.svg" alt="" srcset="" />
       </div>
       <div class="line-height-options">
-        <button
-          class="line-1.0"
-          @click.stop="editor.chain().focus().setP({ level: 1 }).run()"
-        >
+        <button class="line-1.0" @click.stop="editor.chain().focus().setP({ level: 1 }).run()">
           1.0
         </button>
-        <button
-          class="line-1.5"
-          @click.stop="editor.chain().focus().setP({ level: 1.5 }).run()"
-        >
+        <button class="line-1.5" @click.stop="editor.chain().focus().setP({ level: 1.5 }).run()">
           1.5
         </button>
-        <button
-          class="line-2.0"
-          @click.stop="editor.chain().focus().setP({ level: 2 }).run()"
-        >
+        <button class="line-2.0" @click.stop="editor.chain().focus().setP({ level: 2 }).run()">
           2.0
         </button>
-        <button
-          class="line-2.5"
-          @click.stop="editor.chain().focus().setP({ level: 2.5 }).run()"
-        >
+        <button class="line-2.5" @click.stop="editor.chain().focus().setP({ level: 2.5 }).run()">
           2.5
         </button>
       </div>
@@ -45,28 +27,19 @@
     <button @click="editor.chain().focus().toggleItalic().run()">
       <img src="@/assetslc2/italic.svg" alt="" srcset="" />
     </button>
-    <button
-      @click="editor.chain().focus().toggleUnderline().run()"
-      :class="{ 'is-active': editor.isActive('underline') }"
-    >
+    <button @click="editor.chain().focus().toggleUnderline().run()"
+      :class="{ 'is-active': editor.isActive('underline') }">
       <img src="@/assetslc2/underline.svg" alt="" srcset="" />
     </button>
-    <button
-      @click="editor.chain().focus().toggleStrike().run()"
-      :class="{ 'is-active': editor.isActive('strike') }"
-    >
+    <button @click="editor.chain().focus().toggleStrike().run()" :class="{ 'is-active': editor.isActive('strike') }">
       <img src="@/assetslc2/strikethrough.svg" alt="" srcset="" />
     </button>
     <button class="color-button">
       <label for="tiny-color">
         <img src="@/assetslc2/color.svg" alt="" srcset="" />
       </label>
-      <input
-        id="tiny-color"
-        type="color"
-        @input="editor.chain().focus().setColor($event.target.value).run()"
-        :value="editor.getAttributes('textStyle').color"
-      />
+      <input id="tiny-color" type="color" @input="editor.chain().focus().setColor($event.target.value).run()"
+        :value="editor.getAttributes('textStyle').color" />
     </button>
     <button class="h-box">
       <div class="h-ico">
@@ -76,34 +49,22 @@
         <button @click="editor.chain().focus().setParagraph().run()">
           <img src="@/assetslc2/paragraph.svg" alt="" srcset="" />
         </button>
-        <button
-          @click="editor.chain().focus().toggleHeading({ level: 1 }).run()"
-        >
+        <button @click="editor.chain().focus().toggleHeading({ level: 1 }).run()">
           <img src="@/assetslc2/h-1.svg" alt="" srcset="" />
         </button>
-        <button
-          @click="editor.chain().focus().toggleHeading({ level: 2 }).run()"
-        >
+        <button @click="editor.chain().focus().toggleHeading({ level: 2 }).run()">
           <img src="@/assetslc2/h-2.svg" alt="" srcset="" />
         </button>
-        <button
-          @click="editor.chain().focus().toggleHeading({ level: 3 }).run()"
-        >
+        <button @click="editor.chain().focus().toggleHeading({ level: 3 }).run()">
           <img src="@/assetslc2/h-3.svg" alt="" srcset="" />
         </button>
-        <button
-          @click="editor.chain().focus().toggleHeading({ level: 4 }).run()"
-        >
+        <button @click="editor.chain().focus().toggleHeading({ level: 4 }).run()">
           <img src="@/assetslc2/h-4.svg" alt="" srcset="" />
         </button>
-        <button
-          @click="editor.chain().focus().toggleHeading({ level: 5 }).run()"
-        >
+        <button @click="editor.chain().focus().toggleHeading({ level: 5 }).run()">
           <img src="@/assetslc2/h-5.svg" alt="" srcset="" />
         </button>
-        <button
-          @click="editor.chain().focus().toggleHeading({ level: 6 }).run()"
-        >
+        <button @click="editor.chain().focus().toggleHeading({ level: 6 }).run()">
           <img src="@/assetslc2/h-6.svg" alt="" srcset="" />
         </button>
       </div>
@@ -114,16 +75,12 @@
     <button @click="editor.chain().focus().toggleOrderedList().run()">
       <img src="@/assetslc2/list-ordered.svg" alt="" srcset="" />
     </button>
-    <button
-      @click="editor.chain().focus().toggleSubscript().run()"
-      :class="{ 'is-active': editor.isActive('subscript') }"
-    >
+    <button @click="editor.chain().focus().toggleSubscript().run()"
+      :class="{ 'is-active': editor.isActive('subscript') }">
       <img src="@/assetslc2/subscript.svg" alt="" srcset="" />
     </button>
-    <button
-      @click="editor.chain().focus().toggleSuperscript().run()"
-      :class="{ 'is-active': editor.isActive('superscript') }"
-    >
+    <button @click="editor.chain().focus().toggleSuperscript().run()"
+      :class="{ 'is-active': editor.isActive('superscript') }">
       <img src="@/assetslc2/superscript.svg" alt="" srcset="" />
     </button>
     <button @click="editor.chain().focus().toggleBlockquote().run()">
@@ -132,10 +89,7 @@
     <button @click="setLink" :class="{ 'is-active': editor.isActive('link') }">
       <img src="@/assetslc2/link.svg" alt="" srcset="" />
     </button>
-    <button
-      @click="editor.chain().focus().unsetLink().run()"
-      :disabled="!editor.isActive('link')"
-    >
+    <button @click="editor.chain().focus().unsetLink().run()" :disabled="!editor.isActive('link')">
       <img src="@/assetslc2/link-unlink.svg" alt="" srcset="" />
     </button>
     <!-- <button @click="editor.chain().focus().toggleStrike().run()">
@@ -159,35 +113,23 @@
     <button @click="editor.chain().focus().redo().run()">
       <img src="@/assetslc2/redo.svg" alt="" srcset="" />
     </button>
-    <button
-      title="high light"
-      @click="editor.chain().focus().toggleHighlight().run()"
-      :class="{ 'is-active': editor.isActive('highlight') }"
-    >
+    <button title="high light" @click="editor.chain().focus().toggleHighlight().run()"
+      :class="{ 'is-active': editor.isActive('highlight') }">
       <img src="@/assetslc2/high-light.svg" alt="" srcset="" />
     </button>
-    <button
-      @click="editor.chain().focus().toggleTaskList().run()"
-      :class="{ 'is-active': editor.isActive('taskList') }"
-    >
+    <button @click="editor.chain().focus().toggleTaskList().run()" :class="{ 'is-active': editor.isActive('taskList') }">
       <img src="@/assetslc2/task-list.svg" alt="" srcset="" />
     </button>
-    <button
-      @click="editor.chain().focus().setTextAlign('left').run()"
-      :class="{ 'is-active': editor.isActive({ textAlign: 'left' }) }"
-    >
+    <button @click="editor.chain().focus().setTextAlign('left').run()"
+      :class="{ 'is-active': editor.isActive({ textAlign: 'left' }) }">
       <img src="@/assetslc2/align-left.svg" alt="" srcset="" />
     </button>
-    <button
-      @click="editor.chain().focus().setTextAlign('center').run()"
-      :class="{ 'is-active': editor.isActive({ textAlign: 'center' }) }"
-    >
+    <button @click="editor.chain().focus().setTextAlign('center').run()"
+      :class="{ 'is-active': editor.isActive({ textAlign: 'center' }) }">
       <img src="@/assetslc2/align-center.svg" alt="" srcset="" />
     </button>
-    <button
-      @click="editor.chain().focus().setTextAlign('right').run()"
-      :class="{ 'is-active': editor.isActive({ textAlign: 'right' }) }"
-    >
+    <button @click="editor.chain().focus().setTextAlign('right').run()"
+      :class="{ 'is-active': editor.isActive({ textAlign: 'right' }) }">
       <img src="@/assetslc2/align-right.svg" alt="" srcset="" />
     </button>
     <button class="font-siez-box">
@@ -210,7 +152,7 @@
 </template>
 
 <script>
-import { ref, onMounted, h,onBeforeUnmount,  } from "vue";
+import { ref, onMounted, h, onBeforeUnmount, } from "vue";
 import { useEditor, EditorContent } from "@tiptap/vue-3";
 import StarterKit from "@tiptap/starter-kit";
 // bubbele
@@ -318,9 +260,9 @@ export default {
         return {
           setP:
             (attributes) =>
-            ({ commands }) => {
-              return commands.setNode(this.name, attributes);
-            },
+              ({ commands }) => {
+                return commands.setNode(this.name, attributes);
+              },
         };
       },
     });
@@ -362,6 +304,7 @@ export default {
     //   url: 'ws://127.0.0.1:1234',
     //   name: 'example-document',
     // })
+    let time = null
     const editor = useEditor({
       extensions: [
         StarterKit.configure({
@@ -374,9 +317,9 @@ export default {
         Paragraph,
         Text,
         // --Collaboration
-        Collaboration.configure({
-          document: ydoc,
-        }),
+        // Collaboration.configure({
+        //   document: ydoc,
+        // }),
         // Collaboration.configure({
         //   document: provider.document,
         // }),
@@ -446,30 +389,71 @@ export default {
       autofocus: true,
       editable: true,
       injectCSS: false,
-      onUpdate({ editor }) {
-        // console.log(editor.state.doc);
-        // const json = editor.getJSON()
-        const html = editor.getHTML();
-        // 默认两个节点 nodes 之间两个换行符
-        const text = editor.getText();
-        // 可传入参数 blockSeparator 控制节点之间的连接
-        const lineText = editor.getText({ blockSeparator: "--" });
-        // console.log(json)
-        // console.log(html)
-        // console.log(text)
-        // console.log(lineText) // 文本一行内展示，可设置连接符，只能获得文本
+      onUpdate(ctx) {
+        console.log('this',this);
+        console.log('ctx',ctx);
+        return
+        clearTimeout(time);
+        const { editor } = ctx
+        time = setTimeout(() => {
+          console.log(ctx,'ctx');
+          // console.log(editor.state.doc);
+          const json = editor.getJSON()
+          const html = editor.getHTML();
+          // 默认两个节点 nodes 之间两个换行符
+          const text = editor.getText();
+          // 可传入参数 blockSeparator 控制节点之间的连接
+          const lineText = editor.getText({ blockSeparator: "--" });
+          quickToolbar(json)
+          // console.log('json', json)
+          // console.log('html', html)
+          // console.log('text', text)
+          // editor.commands.focus('start')
+          editor.commands.insertContent('<h1>Example 1312312Text</h1>')
+          // editor.commands.insertContentAt(0, '<p>www.itxst.com</p>', {
+          //   updateSelection: true,
+          //   parseOptions: {
+          //     preserveWhitespace: 'full',
+          //   }
+          // })
+          // console.log(lineText) // 文本一行内展示，可设置连接符，只能获得文本
+        }, 1000);
       },
     });
-    console.log(editor);
-    console.log("hiht", CodeHighLight);
+    // 获取最新文本内容，正则匹配是否长度为1且是/,则响应事件，展示工具栏
+    const quickToolbar = function (text) {
+      // let currentText = text.content.slice(-1).content.slice(-1).text
+      let content = text.content
+      let length = content.length
+      if (!content[length - 1].content) {
+        return
+      }
+      let subContent = content[length - 1].content
+      let subLength = subContent.length
+      let regex = /\//
+      if (subContent[subLength - 1].text.length === 1 && regex.test(subContent[subLength - 1].text)) {
+        const selection = window.getSelection();
+        if (!selection.rangeCount) return null;
+        const range = selection.getRangeAt(0);
+        const rect = range.getBoundingClientRect();
+        console.log('text', subContent[subLength - 1].text, {
+          left: rect.left +''+ window.scrollX,
+          top: rect.top + '' +window.scrollY
+        });
+      }
+    }
+    // console.log(editor);
+    // console.log("hiht", CodeHighLight);
+    // 在卸载生命周期使用实例的销毁事件销毁实例
     onBeforeUnmount(() => {
       provider.destroy();
       editor.value.destroy();
     });
+    // 通过设置响应式数据改变容器的font-size
     const fontSize = ref("16px");
     const handleFontSize = (value) => {
       fontSize.value = value + "px";
-      console.log("fontsize", fontSize.value);
+      // console.log("fontsize", fontSize.value);
     };
     return {
       editor,
@@ -550,8 +534,10 @@ export default {
       }
     }
   }
+
   .h-box {
     position: relative;
+
     .h-options {
       position: absolute;
       background-color: #dfdede;
@@ -561,12 +547,15 @@ export default {
       display: none;
       border-radius: 0.4rem;
       z-index: 999;
+
       button {
         margin: 0;
       }
     }
+
     &:hover {
       background-color: #d2e4ff;
+
       .h-options {
         display: flex;
         flex-direction: column;
@@ -599,22 +588,27 @@ export default {
       }
     }
   }
+
   .font-siez-box {
     position: absolute;
+
     .font-size-options {
       display: none;
       position: absolute;
       border-radius: 0.4rem;
       // background-color: #8d8d8d;
       background-color: #dfdede;
+
       button {
         color: black;
         margin: 0;
         text-align: center;
       }
     }
+
     &:hover {
       background-color: #d2e4ff;
+
       .font-size-options {
         display: flex;
         flex-direction: column;
@@ -641,19 +635,20 @@ export default {
 
 ::v-deep .ProseMirror {
   outline: none !important;
-  .code-block {
-  position: relative;
 
-  select {
-    position: absolute;
-    top: .5rem;
-    right: 0.5rem;
+  .code-block {
+    position: relative;
+
+    select {
+      position: absolute;
+      top: .5rem;
+      right: 0.5rem;
+    }
   }
-}
 }
 
 ::v-deep .ProseMirror {
-  > * + * {
+  >*+* {
     margin-top: 0.75em;
   }
 
@@ -735,7 +730,7 @@ export default {
       box-sizing: border-box;
       position: relative;
 
-      > * {
+      >* {
         margin-bottom: 0;
       }
     }
@@ -796,20 +791,21 @@ export default {
     li {
       display: flex;
 
-      > label {
+      >label {
         flex: 0 0 auto;
         margin-right: 0.5rem;
         user-select: none;
       }
 
-      > div {
+      >div {
         flex: 1 1 auto;
       }
     }
   }
 }
+
 ::v-deep .ProseMirror {
-  > * + * {
+  >*+* {
     margin-top: 0.75em;
   }
 
